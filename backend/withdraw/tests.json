@@ -1,0 +1,41 @@
+{
+  "tests": [
+    {
+      "name": "Test OPTIONS request",
+      "method": "OPTIONS",
+      "path": "/",
+      "expectedStatus": 200
+    },
+    {
+      "name": "Test withdrawal with valid data",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "amount": 50,
+        "phone": "+79001234567"
+      },
+      "headers": {
+        "x-user-id": "user123"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "status": "string"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Test withdrawal with insufficient amount",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "amount": 5,
+        "phone": "+79001234567"
+      },
+      "expectedStatus": 400,
+      "expectedBody": {
+        "error": "string"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}

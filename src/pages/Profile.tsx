@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -42,18 +43,20 @@ const Profile = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
-              <Card className="p-4 bg-primary/5 border-primary/20">
-                <div className="flex items-center gap-3">
-                  <div className="p-3 bg-primary/10 rounded-lg">
-                    <Icon name="Wallet" size={24} className="text-primary" />
+              <Link to="/wallet">
+                <Card className="p-4 bg-primary/5 border-primary/20 hover:shadow-lg transition-shadow cursor-pointer">
+                  <div className="flex items-center gap-3">
+                    <div className="p-3 bg-primary/10 rounded-lg">
+                      <Icon name="Wallet" size={24} className="text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-muted-foreground">Баланс</p>
+                      <p className="text-2xl font-heading font-bold">{userBalance} 💎</p>
+                      <p className="text-xs text-muted-foreground">{rubleEquivalent} ₽</p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-sm text-muted-foreground">Баланс</p>
-                    <p className="text-2xl font-heading font-bold">{userBalance} 💎</p>
-                    <p className="text-xs text-muted-foreground">{rubleEquivalent} ₽</p>
-                  </div>
-                </div>
-              </Card>
+                </Card>
+              </Link>
 
               <Card className="p-4 border-muted">
                 <div className="flex items-center gap-3">

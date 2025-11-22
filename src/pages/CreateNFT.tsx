@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -64,10 +65,12 @@ const CreateNFT = () => {
                 <p className="text-xs text-muted-foreground">{userBalance * 10} ₽</p>
               </div>
             </div>
-            <Button variant="outline">
-              <Icon name="Plus" size={16} className="mr-2" />
-              Пополнить
-            </Button>
+            <Link to="/wallet">
+              <Button variant="outline">
+                <Icon name="Plus" size={16} className="mr-2" />
+                Пополнить
+              </Button>
+            </Link>
           </div>
         </Card>
 

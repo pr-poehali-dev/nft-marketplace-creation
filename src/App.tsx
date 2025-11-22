@@ -11,6 +11,7 @@ import TopSales from "./pages/TopSales";
 import Profile from "./pages/Profile";
 import Favorites from "./pages/Favorites";
 import CreateNFT from "./pages/CreateNFT";
+import Wallet from "./pages/Wallet";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/profile" element={<Profile />} />
           <Route path="/favorites" element={<Favorites />} />
           <Route path="/create" element={<CreateNFT />} />
+          <Route path="/wallet" element={<Wallet />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

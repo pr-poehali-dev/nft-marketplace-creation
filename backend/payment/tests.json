@@ -1,0 +1,40 @@
+{
+  "tests": [
+    {
+      "name": "Test OPTIONS request",
+      "method": "OPTIONS",
+      "path": "/",
+      "expectedStatus": 200
+    },
+    {
+      "name": "Test payment creation with valid amount",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "amount": 100,
+        "return_url": "https://test.com/profile"
+      },
+      "headers": {
+        "x-user-id": "user123"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "payment_id": "string"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Test payment with insufficient amount",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "amount": 5
+      },
+      "expectedStatus": 400,
+      "expectedBody": {
+        "error": "string"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}

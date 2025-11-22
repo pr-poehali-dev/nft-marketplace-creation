@@ -10,6 +10,7 @@ const Navigation = () => {
     { path: "/catalog", label: "Каталог", icon: "Grid3x3" },
     { path: "/top-sales", label: "Топ-продажи", icon: "TrendingUp" },
     { path: "/favorites", label: "Избранное", icon: "Heart" },
+    { path: "/wallet", label: "Кошелек", icon: "Wallet" },
     { path: "/profile", label: "Профиль", icon: "User" },
   ];
 
